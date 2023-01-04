@@ -16,8 +16,7 @@ import java.util.Date;
 public class MainActivity extends AppCompatActivity {
     Button btnsingle,btnmulti;
     ConstraintLayout lmain;
-    LinearLayout lsun ,lmoon;
-    @SuppressLint({"MissingInflatedId", "ResourceAsColor"})
+    @SuppressLint({"MissingInflatedId", "ResourceAsColor", "UseCompatLoadingForDrawables"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,8 +24,6 @@ public class MainActivity extends AppCompatActivity {
         btnsingle= findViewById(R.id.btnsingle);
         btnmulti= findViewById(R.id.btnmulti);
         lmain= findViewById(R.id.lmain);
-        lsun=findViewById(R.id.lsun);
-        lmoon=findViewById(R.id.lmoon);
         @SuppressLint("SimpleDateFormat") SimpleDateFormat sdf =  new SimpleDateFormat("HH");
         String currentTimeinHH = sdf.format(new Date());
         int time=Integer.parseInt(currentTimeinHH);
@@ -41,12 +38,12 @@ public class MainActivity extends AppCompatActivity {
         else if(time>=17 && time<19){
 //            evening
             lmain.setBackground(getDrawable(R.drawable.evening));
-            lsun.setBackground(getDrawable(R.drawable.sun));
+            findViewById(R.id.lsun).setBackground(getDrawable(R.drawable.sun));
         }
         else{
 //            night
             lmain.setBackgroundColor(black);
-            lmoon.setBackground(getDrawable(R.drawable.moon));
+            findViewById(R.id.lmoon).setBackground(getDrawable(R.drawable.moon));
         }
         Intent intent = new Intent(this,MainGame.class);
         btnsingle.setOnClickListener(view -> {
