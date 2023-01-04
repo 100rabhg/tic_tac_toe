@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">tic tac toe</string>
+    <string name="button">empty</string>
+    <string name="single">SINGLEPLAYER</string>
+    <string name="multi">MULTIPLAYER</string>
+    <string name="newGame">New Game</string>
+    <string name="game_button">gamebutton</string>
+</resources>

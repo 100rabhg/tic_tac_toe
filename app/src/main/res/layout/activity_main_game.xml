@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/body"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainGame">
+
+    <TextView
+        android:id="@+id/txtusersymbol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/green"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/imgbtn1"
+            style="@style/imageButton"
+            android:onClick="setXO1" />
+
+        <ImageButton
+            android:id="@+id/imgbtn2"
+            style="@style/imageButton"
+            android:onClick="setXO2" />
+
+        <ImageButton
+            android:id="@+id/imgbtn3"
+            style="@style/imageButton"
+            android:onClick="setXO3" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/imgbtn4"
+            style="@style/imageButton"
+            android:onClick="setXO4" />
+
+        <ImageButton
+            android:id="@+id/imgbtn5"
+            style="@style/imageButton"
+            android:onClick="setXO5" />
+
+        <ImageButton
+            android:id="@+id/imgbtn6"
+            style="@style/imageButton"
+            android:onClick="setXO6" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/imgbtn7"
+            style="@style/imageButton"
+            android:onClick="setXO7" />
+
+        <ImageButton
+            android:id="@+id/imgbtn8"
+            style="@style/imageButton"
+            android:onClick="setXO8" />
+
+        <ImageButton
+            android:id="@+id/imgbtn9"
+            style="@style/imageButton"
+            android:onClick="setXO9" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/txtresult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="55sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btngame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/newGame" />
+</LinearLayout>
