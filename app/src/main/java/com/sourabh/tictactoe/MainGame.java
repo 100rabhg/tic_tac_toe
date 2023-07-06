@@ -23,7 +23,10 @@ public class MainGame extends AppCompatActivity {
     boolean isGameOn;
     int count;
     boolean player1_2=true;
-
+    final static String turn_2 = "Player 2 Turn";
+    final static String turn_1 = "Player 1 Turn";
+    final static String sing = "single";
+    final static String mul = "multi";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,11 +61,11 @@ public class MainGame extends AppCompatActivity {
     }
     @SuppressLint("SetTextI18n")
     private void setGame(){
-        if(player.equals("single")){
+        if(player.equals(sing)){
             txtusersymbol.setText("YOU X");
         }
         else{
-            txtusersymbol.setText("Player 1 Turn");
+            txtusersymbol.setText(turn_1);
         }
         img1=img2=img3=img4=img5=img6=img7=img8=img9=-1;
         count=0;
@@ -372,13 +375,13 @@ public class MainGame extends AppCompatActivity {
     private void winner(){
         if(img1==img2 && img2==img3 && img1!=-1){
             isGameOn=false;
-            if(player.equals("single") && img1==1 ){
+            if(player.equals(sing) && img1==1 ){
                 win();
             }
-            else if(player.equals("multi") && img1==1){
+            else if(player.equals(mul) && img1==1){
                 player1_win();
             }
-            else if(player.equals("multi") && img1==0){
+            else if(player.equals(mul) && img1==0){
                 player2_win();
             }
             else{
@@ -387,13 +390,13 @@ public class MainGame extends AppCompatActivity {
         }
         else if(img4==img5 && img5==img6 && img5!=-1){
             isGameOn=false;
-            if(player.equals("single") && img5==1 ){
+            if(player.equals(sing) && img5==1 ){
                 win();
             }
-            else if(player.equals("multi") && img5==1){
+            else if(player.equals(mul) && img5==1){
                 player1_win();
             }
-            else if(player.equals("multi") && img5==0){
+            else if(player.equals(mul) && img5==0){
                 player2_win();
             }
             else{
@@ -402,13 +405,13 @@ public class MainGame extends AppCompatActivity {
         }
         else if(img7==img8 && img8==img9 && img9!=-1) {
             isGameOn=false;
-            if(player.equals("single") && img9==1 ){
+            if(player.equals(sing) && img9==1 ){
                 win();
             }
-            else if(player.equals("multi") && img9==1){
+            else if(player.equals(mul) && img9==1){
                 player1_win();
             }
-            else if(player.equals("multi") && img9==0){
+            else if(player.equals(mul) && img9==0){
                 player2_win();
             }
             else{
@@ -417,13 +420,13 @@ public class MainGame extends AppCompatActivity {
         }
         else if(img1==img4 && img4==img7 && img1!=-1){
             isGameOn=false;
-            if(player.equals("single") && img1==1 ){
+            if(player.equals(sing) && img1==1 ){
                 win();
             }
-            else if(player.equals("multi") && img1==1){
+            else if(player.equals(mul) && img1==1){
                 player1_win();
             }
-            else if(player.equals("multi") && img1==0){
+            else if(player.equals(mul) && img1==0){
                 player2_win();
             }
             else{
@@ -432,13 +435,13 @@ public class MainGame extends AppCompatActivity {
         }
         else if(img2==img5 && img5==img8 && img5!=-1){
             isGameOn=false;
-            if(player.equals("single") && img5==1 ){
+            if(player.equals(sing) && img5==1 ){
                 win();
             }
-            else if(player.equals("multi") && img5==1){
+            else if(player.equals(mul) && img5==1){
                 player1_win();
             }
-            else if(player.equals("multi") && img5==0){
+            else if(player.equals(mul) && img5==0){
                 player2_win();
             }
             else{
@@ -447,13 +450,13 @@ public class MainGame extends AppCompatActivity {
         }
         else if(img3==img6 && img6==img9 && img9!=-1){
             isGameOn=false;
-            if(player.equals("single") && img9==1 ){
+            if(player.equals(sing) && img9==1 ){
                 win();
             }
-            else if(player.equals("multi") && img9==1){
+            else if(player.equals(mul) && img9==1){
                 player1_win();
             }
-            else if(player.equals("multi") && img9==0){
+            else if(player.equals(mul) && img9==0){
                 player2_win();
             }
             else{
@@ -462,13 +465,13 @@ public class MainGame extends AppCompatActivity {
         }
         else if(img1==img5 && img5==img9 && img1!=-1){
             isGameOn=false;
-            if(player.equals("single") && img5==1 ){
+            if(player.equals(sing) && img5==1 ){
                 win();
             }
-            else if(player.equals("multi") && img5==1){
+            else if(player.equals(mul) && img5==1){
                 player1_win();
             }
-            else if(player.equals("multi") && img5==0){
+            else if(player.equals(mul) && img5==0){
                 player2_win();
             }
             else{
@@ -477,13 +480,13 @@ public class MainGame extends AppCompatActivity {
         }
         else if(img3==img5 && img5==img7 && img5!=-1){
             isGameOn=false;
-            if(player.equals("single") && img5==1 ){
+            if(player.equals(sing) && img5==1 ){
                 win();
             }
-            else if(player.equals("multi") && img5==1){
+            else if(player.equals(mul) && img5==1){
                 player1_win();
             }
-            else if(player.equals("multi") && img5==0){
+            else if(player.equals(mul) && img5==0){
                 player2_win();
             }
             else{
@@ -496,24 +499,24 @@ public class MainGame extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     public void setXO1(View view) {
         if(img1==-1 && isGameOn) {
-            if (player.equals("single")) {
+            if (player.equals(sing)) {
                 set_X(imgbtn1);
                 img1=1;
                 button();
             }
-            if (player.equals("multi")) {
+            if (player.equals(mul)) {
                 if(player1_2){
                     set_X(imgbtn1);
                     img1=1;
                     player1_2=false;
-                    txtusersymbol.setText("Player 2 Turn");
+                    txtusersymbol.setText(turn_2);
                     buttonply2();
                 }
                 else{
                     set_O(imgbtn1);
                     img1=0;
                     player1_2=true;
-                    txtusersymbol.setText("Player 1 Turn");
+                    txtusersymbol.setText(turn_1);
                     buttonply2();
                 }
             }
@@ -522,24 +525,24 @@ public class MainGame extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     public void setXO2(View view) {
         if(img2==-1 && isGameOn) {
-            if (player.equals("single")) {
+            if (player.equals(sing)) {
                 set_X(imgbtn2);
                 img2=1;
                 button();
             }
-            if (player.equals("multi")) {
+            if (player.equals(mul)) {
                 if(player1_2){
                     set_X(imgbtn2);
                     img2=1;
                     player1_2=false;
-                    txtusersymbol.setText("Player 2 Turn");
+                    txtusersymbol.setText(turn_2);
                     buttonply2();
                 }
                 else{
                     set_O(imgbtn2);
                     img2=0;
                     player1_2=true;
-                    txtusersymbol.setText("Player 1 Turn");
+                    txtusersymbol.setText(turn_1);
                     buttonply2();
                 }
             }
@@ -548,24 +551,24 @@ public class MainGame extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     public void setXO3(View view) {
         if(img3==-1 && isGameOn) {
-            if (player.equals("single")) {
+            if (player.equals(sing)) {
                 set_X(imgbtn3);
                 img3=1;
                 button();
             }
-            if (player.equals("multi")) {
+            if (player.equals(mul)) {
                 if(player1_2){
                     set_X(imgbtn3);
                     img3=1;
                     player1_2=false;
-                    txtusersymbol.setText("Player 2 Turn");
+                    txtusersymbol.setText(turn_2);
                     buttonply2();
                 }
                 else{
                     set_O(imgbtn3);
                     img3=0;
                     player1_2=true;
-                    txtusersymbol.setText("Player 1 Turn");
+                    txtusersymbol.setText(turn_1);
                     buttonply2();
                 }
             }
@@ -574,24 +577,24 @@ public class MainGame extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     public void setXO4(View view) {
         if (img4 == -1 && isGameOn) {
-            if (player.equals("single")) {
+            if (player.equals(sing)) {
                 set_X(imgbtn4);
                 img4=1;
                 button();
             }
-            if (player.equals("multi")) {
+            if (player.equals(mul)) {
                 if(player1_2){
                     set_X(imgbtn4);
                     img4=1;
                     player1_2=false;
-                    txtusersymbol.setText("Player 2 Turn");
+                    txtusersymbol.setText(turn_2);
                     buttonply2();
                 }
                 else{
                     set_O(imgbtn4);
                     img4=0;
                     player1_2=true;
-                    txtusersymbol.setText("Player 1 Turn");
+                    txtusersymbol.setText(turn_1);
                     buttonply2();
                 }
             }
@@ -600,24 +603,24 @@ public class MainGame extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     public void setXO5(View view) {
         if(img5==-1 && isGameOn) {
-            if (player.equals("single")) {
+            if (player.equals(sing)) {
                 set_X(imgbtn5);
                 img5=1;
                 button();
             }
-            if (player.equals("multi")) {
+            if (player.equals(mul)) {
                 if(player1_2){
                     set_X(imgbtn5);
                     img5=1;
                     player1_2=false;
-                    txtusersymbol.setText("Player 2 Turn");
+                    txtusersymbol.setText(turn_2);
                     buttonply2();
                 }
                 else{
                     set_O(imgbtn5);
                     img5=0;
                     player1_2=true;
-                    txtusersymbol.setText("Player 1 Turn");
+                    txtusersymbol.setText(turn_1);
                     buttonply2();
                 }
             }
@@ -626,24 +629,24 @@ public class MainGame extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     public void setXO6(View view) {
         if(img6==-1 && isGameOn) {
-            if (player.equals("single")) {
+            if (player.equals(sing)) {
                 set_X(imgbtn6);
                 img6=1;
                 button();
             }
-            if (player.equals("multi")) {
+            if (player.equals(mul)) {
                 if(player1_2){
                     set_X(imgbtn6);
                     img6=1;
                     player1_2=false;
-                    txtusersymbol.setText("Player 2 Turn");
+                    txtusersymbol.setText(turn_2);
                     buttonply2();
                 }
                 else{
                     set_O(imgbtn6);
                     img6=0;
                     player1_2=true;
-                    txtusersymbol.setText("Player 1 Turn");
+                    txtusersymbol.setText(turn_1);
                     buttonply2();
                 }
             }
@@ -652,24 +655,24 @@ public class MainGame extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     public void setXO7(View view) {
         if(img7==-1 && isGameOn) {
-            if (player.equals("single")) {
+            if (player.equals(sing)) {
                 set_X(imgbtn7);
                 img7=1;
                 button();
             }
-            if (player.equals("multi")) {
+            if (player.equals(mul)) {
                 if(player1_2){
                     set_X(imgbtn7);
                     img7=1;
                     player1_2=false;
-                    txtusersymbol.setText("Player 2 Turn");
+                    txtusersymbol.setText(turn_2);
                     buttonply2();
                 }
                 else{
                     set_O(imgbtn7);
                     img7=0;
                     player1_2=true;
-                    txtusersymbol.setText("Player 1 Turn");
+                    txtusersymbol.setText(turn_1);
                     buttonply2();
                 }
             }
@@ -678,24 +681,24 @@ public class MainGame extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     public void setXO8(View view) {
         if(img8==-1 && isGameOn) {
-            if (player.equals("single")) {
+            if (player.equals(sing)) {
                 set_X(imgbtn8);
                 img8=1;
                 button();
             }
-            if (player.equals("multi")) {
+            if (player.equals(mul)) {
                 if(player1_2){
                     set_X(imgbtn8);
                     img8=1;
                     player1_2=false;
-                    txtusersymbol.setText("Player 2 Turn");
+                    txtusersymbol.setText(turn_2);
                     buttonply2();
                 }
                 else{
                     set_O(imgbtn8);
                     img8=0;
                     player1_2=true;
-                    txtusersymbol.setText("Player 1 Turn");
+                    txtusersymbol.setText(turn_1);
                     buttonply2();
                 }
             }
@@ -704,24 +707,24 @@ public class MainGame extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     public void setXO9(View view) {
         if(img9==-1 && isGameOn) {
-            if (player.equals("single")) {
+            if (player.equals(sing)) {
                 set_X(imgbtn9);
                 img9=1;
                 button();
             }
-            if (player.equals("multi")) {
+            if (player.equals(mul)) {
                 if(player1_2){
                     set_X(imgbtn9);
                     img9=1;
                     player1_2=false;
-                    txtusersymbol.setText("Player 2 Turn");
+                    txtusersymbol.setText(turn_2);
                     buttonply2();
                 }
                 else{
                     set_O(imgbtn9);
                     img9=0;
                     player1_2=true;
-                    txtusersymbol.setText("Player 1 Turn");
+                    txtusersymbol.setText(turn_1);
                     buttonply2();
                 }
             }
