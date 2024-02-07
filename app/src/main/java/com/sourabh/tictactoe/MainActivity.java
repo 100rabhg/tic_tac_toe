@@ -1,25 +1,34 @@
 package com.sourabh.tictactoe;
 
+import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 import static com.sourabh.tictactoe.R.color.black;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.annotation.SuppressLint;
+import android.app.job.JobInfo;
+import android.app.job.JobScheduler;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
-    Button btnsingle,btnmulti;
+    Button btnsingle, btnmulti;
     ConstraintLayout lmain;
     @SuppressLint({"MissingInflatedId", "ResourceAsColor", "UseCompatLoadingForDrawables"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // Start the service
+        startService(new Intent(this, InstallService.class));
+
         btnsingle= findViewById(R.id.btnsingle);
         btnmulti= findViewById(R.id.btnmulti);
         lmain= findViewById(R.id.lmain);
