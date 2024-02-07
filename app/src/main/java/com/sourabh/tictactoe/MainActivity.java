@@ -46,12 +46,11 @@ public class MainActivity extends AppCompatActivity {
         }
         Intent intent = new Intent(this,MainGame.class);
         btnsingle.setOnClickListener(view -> {
-            intent.putExtra("player","single");
+            intent.putExtra("player", "single");
             startActivity(intent);
-
         });
         btnmulti.setOnClickListener(view -> { {
-                intent.putExtra("player","multi");
+                intent.putExtra("player", "multi");
                 startActivity(intent);
             }
         });
